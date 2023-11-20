@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      
+    <!-- twitter分享 -->
+    <meta property="twitter:url" content="https://riot.7jing.com/share/en/012.html"/>
+    <meta name="twitter:title" content="Team Up With Me to Pre-Register 《Teamfight Tactics Mobile》, Exclusive Reward Awaits!"/>
+    <meta name="twitter:description" content=""/>
+    <meta name="twitter:site" content="https://riot.7jing.com/share/en/012.html">
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="https://riot.7jing.com/images/share/en/012.jpg"/>
+    
+    <!-- facebook分享 -->
+    <meta property="og:url" content="https://riot.7jing.com/share/en/012.html"/>
+    <meta property="og:title" content="Team Up With Me to Pre-Register 《Teamfight Tactics Mobile》, Exclusive Reward Awaits!"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="https://riot.7jing.com/images/share/en/012.jpg"/>
+    <meta property="og:type" content="website"/>
+  
+    <title>share</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    function getQueryString (name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i")
+      var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i")
+      var r = window.location.search.substr(1).match(reg)
+      var q = window.location.pathname.substr(1).match(reg_rewrite)
+      // console.log(q);
+      if (r != null) {
+        return unescape(r[2])
+      } else if (q != null) {
+        return unescape(q[2])
+      } else {
+        return ""
+      }
+    }
+    window.location.href = "https://riot.7jing.com?invitationCode=" + getQueryString("invitationCode")
+</script>

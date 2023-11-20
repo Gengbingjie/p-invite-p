@@ -1,0 +1,11 @@
+[dev]
+  functions = "netlify/functions"
+[build]
+  command = "npm install"
+
+
+[[redirects]]
+  force = true
+  from = "/api/*"
+  status = 200
+  to = "/.netlify/functions/api/:splat"
