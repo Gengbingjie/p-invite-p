@@ -4,7 +4,7 @@ var GLanguage = {
   "ENPH": {
     "lang_0":"Teamfight Tactics",
     "lang_1":"Teamfight Tactics APAC coming to Mobile!",
-    "lang_2":"PRE-REGISTER NOW",
+    "lang_2":"PLAY NOW",
     "lang_3":"Follow us on social media for updates!",
     "lang_4":"Star Shards<br>×50", //rewards1
     "lang_5":"Treasure Tokens<br>×50", //rewards2
@@ -22,8 +22,8 @@ var GLanguage = {
     "lang_15":"Pre-register for the Asia-Pacific arrival of TFT Mobile today and get rewarded.",
     "lang_16":"TFT Mobile APAC to Launch November 2023",
     "lang_17":"Announcing the launch date of TFT Mobile in Asia Pacific",
-    "lang_18":"TFT Treasure Realms",
-    "lang_19":"Out with the Egg, in with the new. Learn everything you need to know about TFT's new loot",
+    "lang_18":"Play Teamfight Tactics Mobile Now!",
+    "lang_19":"Teamfight Tactics Mobile is now live across Asia-Pacific",
 	//news E
 	
     "lang_20":"PAGE TOP",
@@ -64,12 +64,14 @@ var GLanguage = {
 	"lang_47":"Hooray, you're registered!",
 	"lang_48":"While we're busy prepping the Convergence for the influx of new Tacticians, stay tuned on social media for TFT news and updates!",
 	
-	"lang_49":"Link Copied"
+	"lang_49":"Link Copied",
+	
+	"lang_50":"Claim"
   },
   "ENMY": {
     "lang_0":"Teamfight Tactics",
     "lang_1":"Teamfight Tactics APAC coming to Mobile!",
-    "lang_2":"PRE-REGISTER NOW",
+    "lang_2":"PLAY NOW",
     "lang_3":"Follow our official social media now",
     "lang_4":"Star Shards<br>×50", //rewards1
     "lang_5":"Treasure Tokens<br>×50", //rewards2
@@ -87,8 +89,8 @@ var GLanguage = {
     "lang_15":"Pre-register for the Asia-Pacific arrival of TFT Mobile today and get rewarded.",
     "lang_16":"TFT Mobile APAC to Launch November 2023",
     "lang_17":"Announcing the launch date of TFT Mobile in Asia Pacific",
-    "lang_18":"TFT Treasure Realms",
-    "lang_19":"Out with the Egg, in with the new. Learn everything you need to know about TFT's new loot",
+    "lang_18":"Play Teamfight Tactics Mobile Now!",
+    "lang_19":"Teamfight Tactics Mobile is now live across Asia-Pacific",
   	//news E
   	
     "lang_20":"PAGE TOP",
@@ -129,12 +131,14 @@ var GLanguage = {
 	"lang_47":"Hooray, you're registered!",
 	"lang_48":"While we're busy prepping the Convergence for the influx of new Tacticians, stay tuned on social media for TFT news and updates!",
 	
-	"lang_49":"Link Copied"
+	"lang_49":"Link Copied",
+	
+	"lang_50":"Claim"
   },
   "TW": {
     "lang_0":"《聯盟戰棋》",
     "lang_1":"聯盟戰棋即將於亞太地區登上手機平台",
-    "lang_2":"馬上預先註冊",
+    "lang_2":"立即開玩",
     "lang_3":"追蹤我們即可獲得獨家消息和各項福利！",
     "lang_4":"星之碎片<br>×50", //rewards1
     "lang_5":"寶藏幣<br>×50", //rewards2
@@ -152,8 +156,8 @@ var GLanguage = {
     "lang_15":"馬上預先註冊亞太地區的《聯盟戰棋》手機版，將好禮帶回家。",
     "lang_16":"",
     "lang_17":"",
-    "lang_18":"TFT Treasure Realms",
-    "lang_19":"Out with the Egg, in with the new. Learn everything you need to know about TFT's new loot",
+    "lang_18":"立刻遊玩《聯盟戰棋》手機版！",
+    "lang_19":"《聯盟戰棋》手機版現已在亞太地區上線了",
 	//news E
 	
     "lang_20":"頁面頂端",
@@ -194,12 +198,14 @@ var GLanguage = {
 	"lang_47":"太好了，你完成註冊了！",
 	"lang_48":"為了歡迎大量湧入的新棋手，我們正忙於準備戰棋世界的內容，請密切關注我們的社群平台，即時掌握《聯盟戰棋》的最新消息和更新！",
 	
-	"lang_49":"已複製連結"
+	"lang_49":"已複製連結",
+	
+	"lang_50":"領取"
   },
   "TH": {
     "lang_0":"Teamfight Tactics",
     "lang_1":"Teamfight Tactics APAC กำลังจะมาในโทรศัพท์มือถือ!",
-    "lang_2":"ลงทะเบียนล่วงหน้าเลยตอนนี้",
+    "lang_2":"เล่นเลยตอนนี้",
     "lang_3":"ติดตามเราบนโซเชียลมีเดียได้แล้ว",
     "lang_4":"Star Shards<br>×50", //rewards1
     "lang_5":"Treasure Tokens<br>×50", //rewards2
@@ -217,8 +223,8 @@ var GLanguage = {
     "lang_15":"TFT Mobile กำลังจะเปิดตัวในภูมิภาคเอเชียแปซิฟิก ลงทะเบียนล่วงหน้าตอนนี้เพื่อรับของรางวัลมากมาย",
     "lang_16":"TFT Mobile APAC กำลังจะเปิดตัวในเดือนพฤศจิกายน 2023",
     "lang_17":"Out with the Egg, in with the new. Learn everything you need to know about TFT's new loot",
-    "lang_18":"ประกาศวันเปิดตัว TFT Mobile ในเอเชียแปซิฟิก",
-    "lang_19":"Out with the Egg, in with the new. Learn everything you need to know about TFT's new loot",
+    "lang_18":"เล่น Teamfight Tactics Mobile ได้เลย!",
+    "lang_19":"Teamfight Tactics Mobile เปิดให้บริการในเอเซียแปซิฟิกแล้ว",
 	//news E
 	
     "lang_20":"กลับไปด้านบน",
@@ -259,12 +265,14 @@ var GLanguage = {
 	"lang_47":"ไชโย คุณลงทะเบียนเรียบร้อยแล้ว!",
 	"lang_48":"ในขณะที่เรากำลังวิ่งวุ่นเตรียม Convergence ให้พร้อมสำหรับนักวางแผนหน้าใหม่ทั้งหลาย ก็ขอให้ติดตามช่องทางโซเชียลของ TFT เอาไว้ด้วยล่ะเพื่อจะได้ไม่พลาดข่าวสารและอัปเดตเพิ่มเติม!",
 	
-	"lang_49":"คัดลอกลิงก์"
+	"lang_49":"คัดลอกลิงก์",
+	
+	"lang_50":"รับรางวัล"
   },
   "ID": {
     "lang_0":"Teamfight Tactics",
     "lang_1":"Teamfight Tactics APAC hadir di Mobile!",
-    "lang_2":"Pre-register sekarang",
+    "lang_2":"MAIN SEKARANG",
     "lang_3":"Ikuti sosial media TFT untuk info dan keuntungan eksklusif!",
     "lang_4":"Shards Star<br>×50", //rewards1
     "lang_5":"Treasure Tokens<br>×50", //rewards2
@@ -282,8 +290,8 @@ var GLanguage = {
     "lang_15":"Pre-register untuk peluncuran TFT Mobile di Asia-Pasifik sekarang juga dan dapatkan hadiahnya.",
     "lang_16":"TFT Mobile APAC akan Diluncurkan pada November 2023",
     "lang_17":"Pengumuman tanggal peluncuran TFT Mobile di Asia Pasifik",
-    "lang_18":"TFT Treasure Realms",
-    "lang_19":"Out with the Egg, in with the new. Learn everything you need to know about TFT's new loot",
+    "lang_18":"Mainkan Teamfight Tactics Mobile Sekarang！",
+    "lang_19":"Teamfight Tactics Mobile sekarang tersedia di seluruh Asia Pasifik",
 	//news E
 	
     "lang_20":"Halaman Atas",
@@ -324,12 +332,14 @@ var GLanguage = {
 	"lang_47":"Hore, kamu sudah terdaftar!",
 	"lang_48":"Selagi kami sibuk mempersiapkan Convergence untuk menyambut kedatangan Tactician baru, pantau terus media sosial untuk berita dan kabar terbaru TFT!",
 	
-	"lang_49":"Tautan Disalin"
+	"lang_49":"Tautan Disalin",
+	
+	"lang_50":"Klaim"
   },
  //  "VI": {
  //    "lang_0":"Đấu Trường Chân Lý",
  //    "lang_1":"Đấu Trường Chân Lý Châu Á - Thái Bình Dương sắp có mặt trên Di Động!",
- //    "lang_2":"Đăng ký sớm ngay",
+ //    "lang_2":"CHƠI NGAY",
  //    "lang_3":"Theo dõi chúng tôi để cập nhật những thông tin độc quyền và các đặc quyền khác!",
  //    "lang_4":"Mảnh Sao<br>×50", //rewards1
  //    "lang_5":"Kỉ Vật Kho Tàng<br>×50", //rewards2
@@ -388,7 +398,9 @@ var GLanguage = {
 //			"lang_47":"Xin chúc mừng, bạn đã đăng ký thành công!",
 //			"Trong thời gian chờ đợi chúng tôi chuẩn bị Đấu Trường để chào đón vô số Linh Thú mới, đừng bỏ lỡ bất kỳ thông tin và cập nhật ĐTCL nào trên các trang mạng xã hội bạn nhé!",
 	
-//		"lang_49":"Đã Chép Liên Kết"
+//		"lang_49":"Đã Chép Liên Kết",
+	
+	// "lang_50":"Nhận"
  //  },
 }
 var GLink = {
@@ -398,6 +410,7 @@ var GLink = {
     "link_3":"https://www.youtube.com/@playtftph",  //Youtube
     "link_4":"https://teamfighttactics.leagueoflegends.com/en-sg/news/announcements/pre-register-now-tft-mobile-is-coming-to-the-asia-pacific-region/",   //Press Release
 	"link_4_1":"https://teamfighttactics.leagueoflegends.com/en-ph/news/announcements/tft-mobile-apac-to-launch-november-2023/", //新增文章链接
+	"link_4_2":"https://teamfighttactics.leagueoflegends.com/en-ph/news/announcements/play-teamfight-tactics-mobile-now/", //1116新增文章链接
 	"link_5":"https://www.riotgames.com/en/privacy-notice", //PRIVACY NOTICE
 	"link_6":"https://www.riotgames.com/en/terms-of-service", //TERMS OF SERVICE
 	"link_7":"javascript:;", //COOKIE PREFERENCES
@@ -409,6 +422,7 @@ var GLink = {
     "link_3":"https://www.youtube.com/@playtftmy",  //Youtube
     "link_4":"https://teamfighttactics.leagueoflegends.com/en-sg/news/announcements/pre-register-now-tft-mobile-is-coming-to-the-asia-pacific-region/",   //Press Release
 	"link_4_1":"https://teamfighttactics.leagueoflegends.com/en-sg/news/announcements/tft-mobile-apac-to-launch-november-2023/", //新增文章链接
+	"link_4_2":"https://teamfighttactics.leagueoflegends.com/en-sg/news/announcements/play-teamfight-tactics-mobile-now/", //1116新增文章链接
 	"link_5":"https://www.riotgames.com/en/privacy-notice", //PRIVACY NOTICE
 	"link_6":"https://www.riotgames.com/en/terms-of-service", //TERMS OF SERVICE
 	"link_7":"javascript:;", //COOKIE PREFERENCES
@@ -420,6 +434,7 @@ var GLink = {
     "link_3":"https://www.youtube.com/@playtfttw",  //Youtube
     "link_4":"https://teamfighttactics.leagueoflegends.com/zh-tw/news/announcements/pre-register-now-tft-mobile-is-coming-to-the-asia-pacific-region/",   //Press Release
 	"link_4_1":"https://teamfighttactics.leagueoflegends.com/zh-tw/news/announcements/tft-mobile-apac-to-launch-november-2023/", //新增文章链接
+	"link_4_2":"https://teamfighttactics.leagueoflegends.com/zh-tw/news/announcements/play-teamfight-tactics-mobile-now/", //1116新增文章链接
 	"link_5":"https://game.taiwanmobile.com/assets/game-privacy.html", //PRIVACY NOTICE
 	"link_6":"https://www.riotgames.com/zh-hant/terms-of-service", //TERMS OF SERVICE
 	"link_7":"javascript:;", //COOKIE PREFERENCES
@@ -431,6 +446,7 @@ var GLink = {
     "link_3":"https://www.youtube.com/@playtftth",  //Youtube
     "link_4":"https://teamfighttactics.leagueoflegends.com/th-th/news/announcements/pre-register-now-tft-mobile-is-coming-to-the-asia-pacific-region/",   //Press Release
 	"link_4_1":"https://teamfighttactics.leagueoflegends.com/th-th/news/announcements/tft-mobile-apac-to-launch-november-2023/", //新增文章链接
+	"link_4_2":"https://teamfighttactics.leagueoflegends.com/th-th/news/announcements/play-teamfight-tactics-mobile-now/", //1116新增文章链接
 	"link_5":"https://www.riotgames.com/th/privacy-notice", //PRIVACY NOTICE
 	"link_6":"https://www.riotgames.com/th/terms-of-service", //TERMS OF SERVICE
 	"link_7":"javascript:;", //COOKIE PREFERENCES
@@ -441,7 +457,8 @@ var GLink = {
     "link_2":"https://www.instagram.com/playtftid",  //Instagram
     "link_3":"https://www.youtube.com/@playtftid",  //Youtube
     "link_4":"https://teamfighttactics.leagueoflegends.com/en-sg/news/announcements/pre-register-now-tft-mobile-is-coming-to-the-asia-pacific-region/",   //Press Release
-	"link_4_1":"", //新增文章链接
+	"link_4_1":"https://teamfighttactics.leagueoflegends.com/en-sg/news/announcements/tft-mobile-apac-to-launch-november-2023/", //新增文章链接
+	"link_4_2":"https://teamfighttactics.leagueoflegends.com/en-sg/news/announcements/play-teamfight-tactics-mobile-now/", //1116新增文章链接
 	"link_5":"https://www.riotgames.com/id/privacy-notice", //PRIVACY NOTICE
 	"link_6":"https://www.riotgames.com/id/terms-of-service", //TERMS OF SERVICE
 	"link_7":"javascript:;", //COOKIE PREFERENCES
