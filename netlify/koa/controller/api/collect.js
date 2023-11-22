@@ -1,39 +1,37 @@
-// const { fulfillStatus, insertGiftLog, fulfillment } = require('../utils/function')
+const { outJson } = require('../../utils/utils');
+const { fulfillStatus, insertGiftLog, fulfillment } = require('../../utils/function');
+const db = require('../../lib/mysql');
+
 module.exports = async (ctx) => {
-    const prizePosition = ctx.request.body.prizePosition || 0;
-    const skuId = PRIZE_MAP[String(prizePosition)];
-    let requestSuccess = false;
-    let userLog = await getUserLog(ctx, ctx.state.user.sub)
-
-    if (!skuId) {
-        ctx.body = outJson(ctx, 10001)
-        return
-    }
-    if (userLog[0]['loginDays'] < prizePosition) {
-        ctx.body = outJson(ctx, 10002)
-        return
-    }
+    const userOpenId = ctx.state.userOpenId;
+    let userInfo = {};
+    userInfo.invitationNum = undefined;
+    const skuId = 'LOL_HEXTECH_CHEST_KEY_SKU_2';
     try {
-        let sql = `select * from prizeLog where userId = "${ctx.state.user.sub}"  and position = "${prizePosition}"`
-        prizeLog = await db.readMysql(sql)
+        userInfo = await db.readMysql(`SELECT * FROM preRegisterUser WHERE userOpenId="${userOpenId}"`);
     } catch (err) {
-        ctx.body = outJson(ctx, 50001)
-        return
+        return ctx.body = outJson(ctx, 50001);
     }
-    if (!prizeLog) {
-        ctx.body = outJson(ctx, 50001)
-        return
+    //会话是否过期
+    if (!userInfo) {
+        return ctx.body = outJson(ctx, 40001);
+    }
+    //查询是否满足领取条件
+    if (userInfo[0].invitationNum !== 3) {
+        return ctx.body = outJson(ctx, 20003);
+    }
+    //查询是否已领取
+    const checkSkuCollect = await db.readMysql(`SELECT * FROM prePrizeCollect WHERE userOpenId="${userOpenId}" AND skuId="${skuId}"`)
+    if (Array.isArray(checkSkuCollect) && checkSkuCollect.length > 0) {
+        return ctx.body = outJson(ctx, 20001);
     }
 
-    if (prizeLog.length > 0) {
-        ctx.body = outJson(ctx, 10004)  //奖励已领取
-        return
-    }
-    let prizeStatus = await fulfillStatus(ctx.state.user.sub, skuId);
-
+    //查询状态
+    let requestSuccess = false;
+    let prizeStatus = await fulfillStatus(userOpenId, skuId, ctx);
     switch (prizeStatus) {
         case -1:
-            outJson(ctx, 10001);
+            outJson(ctx, 20002);
             break;
         case 0:
             outJson(ctx, 50001);
@@ -43,38 +41,32 @@ module.exports = async (ctx) => {
             // 已经领取奖励但还没添加记录时添加记录
             await insertGiftLog(
                 ctx,
-                ctx.state.user.sub,
-                prizePosition,
+                userOpenId,
                 skuId,
                 parseInt(ctx.cgiStartTime / 1000)
             );
             break;
         default:
-            // 还未请求发起请求
+            //还未发起请求
             try {
-                requestSuccess = await fulfillment(ctx.state.user.sub, skuId)
+                requestSuccess = await fulfillment(userOpenId, skuId)
             } catch (err) {
-                ctx.body = outJson(ctx, 50001);
-                return
+                return ctx.body = outJson(ctx, 50001);
             }
             if (requestSuccess) {
                 try {
                     await insertGiftLog(
                         ctx,
-                        ctx.state.user.sub,
-                        prizePosition,
+                        userOpenId,
                         skuId,
                         parseInt(ctx.cgiStartTime / 1000)
                     );
-                    ctx.body = outJson(ctx, 200);
+                    return ctx.body = outJson(ctx, 200);
                 } catch (err) {
-                    ctx.body = outJson(ctx, 50001);
-                    return
+                    return ctx.body = outJson(ctx, 50001);
                 }
             } else {
-                ctx.body = outJson(ctx, 50001);
-                return
+                return ctx.body = outJson(ctx, 50001);
             }
-            break;
     }
 }
