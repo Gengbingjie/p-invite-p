@@ -1,4 +1,4 @@
-const { fulfillStatus, insertGiftLog, fulfillment } = require('../utils/function')
+// const { fulfillStatus, insertGiftLog, fulfillment } = require('../utils/function')
 module.exports = async (ctx) => {
     const prizePosition = ctx.request.body.prizePosition || 0;
     const skuId = PRIZE_MAP[String(prizePosition)];

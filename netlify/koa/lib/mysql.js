@@ -59,6 +59,44 @@ class DB {
             });
         });
     }
+    //开启事物
+    async beginTransaction() {
+        return new Promise((resolve, reject) => {
+            this.connection.beginTransaction((err) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve();
+            });
+        });
+    }
+    // 提交事务方法
+    async commitTransaction() {
+        return new Promise((resolve, reject) => {
+            this.connection.commit((err) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve();
+            });
+        });
+    }
+
+    // 回滚事务方法
+    async rollbackTransaction() {
+        return new Promise((resolve, reject) => {
+            this.connection.rollback((err) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve();
+            });
+        });
+    }
+
 }
 
 module.exports = new DB();

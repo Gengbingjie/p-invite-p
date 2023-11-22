@@ -3,7 +3,6 @@ const http = require('../../utils/axios')
 const { HTTPURL } = require('../../config/Constant')
 
 module.exports = async (ctx) => {
-    console.log(ctx.path)
     const { code } = ctx.query;
 
     if (!code) {

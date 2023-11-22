@@ -6,7 +6,7 @@ module.exports = async (ctx, next) => {
         return;
     }
     let invitationCode = ctx.session.invitationCode;
-    console.log(invitationCode)
+
     if (!invitationCode) {
         try {
             invitationCode = ctx.query.invitationCode;
@@ -15,8 +15,6 @@ module.exports = async (ctx, next) => {
             console.log('no invitationCode')
             console.log(err)
         }
-    } else {
-        ctx.state.invitationCode = invitationCode;
     }
 
     const tokenData = ctx.session.riotAccessToken;
