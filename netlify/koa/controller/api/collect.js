@@ -31,10 +31,10 @@ module.exports = async (ctx) => {
     let prizeStatus = await fulfillStatus(userOpenId, skuId, ctx);
     switch (prizeStatus) {
         case -1:
-            outJson(ctx, 20002);
+            ctx.body = outJson(ctx, 20002);
             break;
         case 0:
-            outJson(ctx, 50001);
+            ctx.body = outJson(ctx, 50001);
             break;
         case 1:
         case 2:
