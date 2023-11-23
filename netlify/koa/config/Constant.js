@@ -2,11 +2,21 @@ const SQLCONFIG = {
   host: '119.45.189.71',
   user: 'qinzhiyuan',
   password: '8j8my8XEy5MpAcwT',
+  // password: '8j8my8XEy5M',
   charset: 'utf8',
   port: '3306',
   database: '秦志远测试数据库'
 }
 
+const SKUID_DATA = {
+  '1': 'APAC_EVENT_STAR_SHARD_SKU_1',
+  '2': 'APAC_EVENT_STAR_SHARD_SKU_2',
+  // '3': '',
+  '4': 'APAC_EVENT_LITTLE_LEGEND_TOGETHER_SKU_4',
+  // '5': '',
+  // '6': '',
+  '7': '2023_TFT_APAC_YAY_EMOTE'
+}
 // const SQLCONFIG = {
 //   host: process.env.NETLIFY_DATA_URL,
 //   user: process.env.NETLIFY_DATA_USER,
@@ -31,4 +41,4 @@ const DATA_KEY = {
   RIOT_USER_OPENID_KEY: 'riotUserOpenId',
 }
 // 如果在模块中导出常量，可以使用以下代码
-module.exports = { SQLCONFIG, HTTPURL, DATA_KEY };
+module.exports = { SQLCONFIG, HTTPURL, DATA_KEY, SKUID_DATA };

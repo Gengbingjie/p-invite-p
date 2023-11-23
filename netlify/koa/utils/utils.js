@@ -10,6 +10,11 @@ const utils = {
             jData,
             execTime
         }
+    },
+    isEmpty(obj) {
+        // console.log('obj')
+        // console.log(obj)
+        return Object.keys(obj).length === 0;
     }
 }
 

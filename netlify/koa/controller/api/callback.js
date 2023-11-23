@@ -14,8 +14,6 @@ module.exports = async (ctx) => {
     postData.append('grant_type', 'authorization_code');
     postData.append('code', code);
     postData.append('redirect_uri', `https://${ctx.get('host')}/api/callback`)
-    console.log('------------redirect_uri----------------')
-    console.log(`https://${ctx.get('host')}/api/callback`)
 
     const headers = {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -29,16 +27,11 @@ module.exports = async (ctx) => {
 
     try {
         resp = await http.post(HTTPURL.tokenUrl, postData, { headers })
-        console.log('resp=========callback回调==============')
-        console.log(resp)
+        // console.log('resp=========callback回调==============')
+        // console.log(resp)
         let token = resp.access_token
-        let expires_time = new Date(Date.now() + (resp.expires_in - 600) * 1000)
-
-        ctx.session.riotAccessToken = {
-            token: token,
-            expires: expires_time
-        };
-        ctx.session.riotRefreshToken = resp.refresh_token;
+        ctx.session.riotAccessToken = token
+        ctx.session.maxAge = resp.expires_in * 1000
 
         let url = `https://${ctx.get('host')}`
         ctx.status = 302

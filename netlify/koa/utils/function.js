@@ -1,12 +1,11 @@
 const { outJson } = require('./utils');
 const http = require('./axios');
 const { HTTPURL, DATA_KEY } = require('../config/Constant');
+const db = require('../lib/mysql')
 module.exports = {
-    async getUserId(tokenData) {
-        const { token } = tokenData
+    async getUserId(ctx, token) {
         if (!token) {
-            ctx.body = outJson(ctx, 40002)
-            return;
+            return '';
         }
 
         const checkResult = await http.get(HTTPURL.authUser, {
@@ -15,19 +14,17 @@ module.exports = {
             }
         }).catch((err) => {
             console.log('token无效!')
-            ctx.body = outJson(ctx, 40002)
-            return
+            return ''
         })
 
         if (checkResult) {
             return checkResult.sub
         } else {
-            ctx.body = outJson(ctx, 40002)
-            return;
+            return '';
         }
     },
     async fulfillStatus(userId, skuId, ctx) {
-        if (!userId || skuId !== 'LOL_HEXTECH_CHEST_KEY_SKU_2') {
+        if (!userId) {
             return -1
         }
         let url = `${HTTPURL.domainName}/fulfillment/v2/status/${userId}/${skuId}?api_key=${DATA_KEY.apiKey}`;
@@ -35,6 +32,8 @@ module.exports = {
         try {
             resp = await http.get(url)
         } catch (err) {
+            console.log('=============查询礼物状态错误信息=================')
+            console.log(err)
             resp = false;
             ctx.body = outJson(ctx, 50001)
             return
@@ -65,15 +64,19 @@ module.exports = {
 
     },
     async fulfillment(userId, skuId) {
-        if (!userId || skuId !== 'LOL_HEXTECH_CHEST_KEY_SKU_2') {
+        if (!userId) {
             return false
         }
-
+        skuId = skuId.split(',')[0]
         let url = `${HTTPURL.domainName}/fulfillment/v2/fulfill/${userId}/${skuId}?origin=${DATA_KEY.origin}&api_key=${DATA_KEY.apiKey}`;
         let resp;
+        console.log('===========请求发货url==================')
+        console.log(url)
         try {
             resp = await http.post(url)
         } catch (err) {
+            console.log('=========发货请求======err')
+            console.log(err)
             resp = false;
         }
 
@@ -82,17 +85,21 @@ module.exports = {
     },
     async insertGiftLog(ctx, userOpenId, skuId, time) {
         let sql = `insert into prePrizeCollect (userOpenId, skuId, createTime) values ("${userOpenId}","${skuId}",${time})`;
+        // console.log('sql')
+        // console.log(sql)
         let insertPrizeStatus;
         try {
             insertPrizeStatus = await db.writeMySql(sql)
         } catch (err) {
-            insertPrizeStatus = false
+            // console.log('err')
+            // console.log(err)
+            return ctx.body = outJson(ctx, 50001);
         }
         if (!insertPrizeStatus) {
             return ctx.body = outJson(ctx, 50001);
 
         }
-        return ctx.body = outJson(ctx, 200);
+        return ctx.body = outJson(ctx, 0);
     },
     generateInvitationCode(userOpenId) {
         const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

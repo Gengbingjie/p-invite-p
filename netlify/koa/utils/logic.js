@@ -6,9 +6,9 @@ const logic = {
         let captainInfo
         try {
             captainInfo = await db.readMysql(sql)
-            return captainInfo
+            return (captainInfo.length > 0 ? captainInfo[0] : {})
         } catch (err) {
-            return ''
+            return {}
         }
     },
     async getUserInfoByUserOpenId(userOpenId) {
@@ -16,9 +16,7 @@ const logic = {
         let userInfo
         try {
             userInfo = await db.readMysql(sql)
-            console.log('userInfo==================')
-            console.log(userInfo)
-            return userInfo
+            return userInfo[0]
         } catch (err) {
             console.log(err)
             return ''
@@ -30,19 +28,27 @@ const logic = {
 
         // 构建 SQL 插入语句
         const sql = `INSERT INTO preRegisterUser (userOpenId, captainOpenId, invitationCode, invitationNum) VALUES ('${userOpenId}', '${captainOpenId}', '${invitationCode}', '${invitationNum}')`;
-
-        console.log('============sql============')
-        console.log(sql)
+        // console.log('============sql============')
+        // console.log(sql)
         // 执行 SQL 查询
         try {
             result = await db.writeMySql(sql)
+            // data = await logic.getUserInfoByUserOpenId(userOpenId)
+            let data = {
+                id: result.insertId,
+                userOpenId: userOpenId,
+                captainOpenId: captainOpenId,
+                invitationCode: invitationCode,
+                invitationNum: invitationNum,
+                createTime: new Date().toISOString()
+            }
             console.log('===========插入数据库result============result')
-            console.log(result)
-            return result
+            console.log(data)
+            return data
         } catch (err) {
-            console.log('err=================')
-            console.log(err)
-            return false
+            // console.log('err=================')
+            // console.log(err)
+            return {}
         }
     },
     async updateUserInvitationInfo(captainUserId, invitationCount, userOpenId) {
@@ -53,13 +59,14 @@ const logic = {
             return false
         }
 
-        let sql = sql = `UPDATE preRegisterUser SET invitationNum = '${invitationCount}'
-        WHERE invitationNum < 3 AND userOpenId = '${userOpenId}'`
+        let sql = `UPDATE preRegisterUser SET invitationNum = '${invitationCount}'
+        WHERE invitationNum < 3 AND userOpenId = '${captainUserId}'`
         let saveFlag
         try {
             saveFlag = await db.writeMySql(sql)
         } catch (err) {
             console.log(err)
+            await db.rollbackTransaction()
             return false
         }
 
