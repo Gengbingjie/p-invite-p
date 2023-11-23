@@ -5,7 +5,7 @@ const { SKUID_DATA } = require('../../config/Constant')
 const { fulfillStatus, fulfillment, insertGiftLog } = require('../../utils/function')
 
 module.exports = async (ctx) => {
-    let prizePosition = ctx.query.position || 0
+    let prizePosition = ctx.query.prizePosition || 0
     const userOpenId = ctx.state.userOpenId;
     const skuId = SKUID_DATA[String(prizePosition)];
     let userInfo = {};

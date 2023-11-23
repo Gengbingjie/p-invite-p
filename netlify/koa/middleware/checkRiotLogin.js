@@ -37,7 +37,7 @@ module.exports = async (ctx, next) => {
         await next();
     } catch (err) {
         console.log(err)
-        ctx.body = outJson(ctx, 40001)
+        ctx.body = outJson(ctx, 50001)
         return;
     }
     // if (!userOpenId) {

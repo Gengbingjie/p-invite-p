@@ -11,12 +11,12 @@ const SQLCONFIG = {
 const SKUID_DATA = {
   '1': 'APAC_EVENT_STAR_SHARD_SKU_1',
   '2': 'APAC_EVENT_STAR_SHARD_SKU_2',
-  // '3': '',
-  '4': 'APAC_EVENT_LITTLE_LEGEND_TOGETHER_SKU_4',
-  // '5': '',
-  // '6': '',
-  '7': '2023_TFT_APAC_YAY_EMOTE'
+  '3': 'APAC_EVENT_LITTLE_LEGEND_TOGETHER_SKU_4',
+  '4': 'APAC_EVENT_TREASURE_TOKEN_ONETWENTY_SKU_3',
+  '5': 'APAC_EVENT_BOBA_SPRITE_SKU_6',
+  '6': '2023_TFT_APAC_YAY_EMOTE'
 }
+
 // const SQLCONFIG = {
 //   host: process.env.NETLIFY_DATA_URL,
 //   user: process.env.NETLIFY_DATA_USER,

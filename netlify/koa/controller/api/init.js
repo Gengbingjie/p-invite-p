@@ -84,18 +84,30 @@ module.exports = async (ctx) => {
         ctx.body = outJson(ctx, 50001, err)
         return
     }
-    console.log('getPrizeInfo')
-    console.log(getPrizeInfo)
+    // console.log('getPrizeInfo')
+    // console.log(getPrizeInfo)
     const getPrizeSkuIds = getPrizeInfo.map(item => item.skuId)
     const prizeStatus = Object.fromEntries(
         Object.entries(SKUID_DATA).map(([pos, skuId]) => [pos, getPrizeSkuIds.includes(skuId)])
     );
     // console.log('prizeStatus')
     // console.log(prizeStatus)
+
+    //查询注册表中数据数量
+    let userLen = 0
+    try {
+        let result = await db.readMysql('SELECT COUNT("userOpenId") AS total_rows FROM prePrizeCollect')
+        userLen = result[0].total_rows
+    } catch (err) {
+        ctx.body = outJson(ctx, 50001, err)
+        return
+    }
+
     let json = {
         invitationCount: userCount,
         invitationCode: userCode,
-        prizeStatus: prizeStatus
+        prizeStatus: prizeStatus,
+        userLen: userLen
     }
     // console.log('===================json')
     // console.log(json)

@@ -359,7 +359,9 @@ $('#twitterShare').on('click', function () {
 })
 
 function shareMetaUrl() {
-	return `https://riot.7jing.com/share/` + resultLang + `/` + resultNum2 + `.html?invitationCode=` + invitationCode
+	console.log(resultLang)
+	console.log(resultNum2)
+	return `${thisUrl.origin}/share/` + resultLang + `/` + resultNum2 + `.html?invitationCode=` + invitationCode
 }
 
 // var url = 'https://riot.7jing.com/php'
@@ -435,9 +437,18 @@ $('#collectBtn').on('click', function () {
 
 	collectBtnClick = true
 
+	getReward(6)
+
+})
+
+$('.collectBtn').on('click', function () {
+	let pos = $(this)[0].dataset.pos
+	getReward(pos)
+})
+function getReward(pos) {
 	$.ajax({
 		// url: url + '/invitation/collect?invitationCode=' + invitationCode,
-		url: url + '/api/collect?invitationCode=' + invitationCode,
+		url: url + '/api/collect?prizePosition=' + pos,
 		type: 'GET',
 		dataType: 'json',
 		success: function (res) {
@@ -459,8 +470,8 @@ $('#collectBtn').on('click', function () {
 		complete: function () {
 			collectBtnClick = false
 		}
-	});
-})
+	})
+}
 
 function showAlert(iRet) {
 	var text = getSMsgByiRet(iRet)
