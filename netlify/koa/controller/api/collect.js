@@ -5,7 +5,10 @@ const { SKUID_DATA } = require('../../config/Constant')
 const { fulfillStatus, fulfillment, insertGiftLog } = require('../../utils/function')
 
 module.exports = async (ctx) => {
-    let prizePosition = ctx.query.prizePosition || 0
+    let prizePosition = ctx.query.prizePosition
+    if (!prizePosition) {
+        ctx.body = outJson(ctx, 50001)
+    }
     const userOpenId = ctx.state.userOpenId;
     const skuId = SKUID_DATA[String(prizePosition)];
     let userInfo = {};
@@ -32,8 +35,6 @@ module.exports = async (ctx) => {
         let sql = `select * from prePrizeCollect where userOpenId = "${userOpenId}" and skuId="${skuId}"`
         checkSkuCollect = await db.readMysql(sql)
     } catch (err) {
-        console.log('=============查询数据库领奖状态错误信息=================')
-        console.log(err)
         ctx.body = outJson(ctx, 50001)
         return
     }
@@ -43,8 +44,6 @@ module.exports = async (ctx) => {
 
     //查询状态
     let prizeStatus = await fulfillStatus(userOpenId, skuId, ctx);
-    console.log('==========礼物状态=======prizeStatus')
-    console.log(prizeStatus)
     switch (prizeStatus) {
         case -1:
             ctx.body = outJson(ctx, 20002);
@@ -68,8 +67,6 @@ module.exports = async (ctx) => {
             try {
                 requestSuccess = await fulfillment(userOpenId, skuId)
             } catch (err) {
-                console.log('=========请求发货错误信息==============')
-                console.log(err)
                 return ctx.body = outJson(ctx, 50001);
             }
 

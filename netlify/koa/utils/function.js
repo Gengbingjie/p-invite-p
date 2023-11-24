@@ -7,8 +7,8 @@ module.exports = {
         if (!token) {
             return '';
         }
-        console.log('token')
-        console.log(token)
+        // console.log('token')
+        // console.log(token)
         const checkResult = await http.get(HTTPURL.authUser, {
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -71,8 +71,8 @@ module.exports = {
         }
         let url = `${HTTPURL.domainName}/fulfillment/v2/fulfill/${userId}/${skuId}?origin=${DATA_KEY.origin}&api_key=${DATA_KEY.apiKey}`;
         let resp;
-        console.log('===========请求发货url==================')
-        console.log(url)
+        // console.log('===========请求发货url==================')
+        // console.log(url)
         try {
             resp = await http.post(url)
         } catch (err) {

@@ -17,8 +17,8 @@ module.exports = async (ctx) => {
     try {
         captainUser = await getUserByInvitationCode(invitationCode)
     } catch (err) {
-        console.log('============获取队长用户错误信息================')
-        console.log(err)
+        // console.log('============获取队长用户错误信息================')
+        // console.log(err)
         ctx.body = outJson(ctx, 50001)
         return
     }
@@ -28,8 +28,8 @@ module.exports = async (ctx) => {
         userInfo = await getUserInfoByUserOpenId(userOpenId)
 
     } catch (err) {
-        console.log('获取用户useropenid错误信息')
-        console.log(err)
+        // console.log('获取用户useropenid错误信息')
+        // console.log(err)
         ctx.body = outJson(ctx, 50001)
         return
     }
@@ -49,8 +49,8 @@ module.exports = async (ctx) => {
 
     let userCode = userInfo.invitationCode
     let userCount = userInfo.invitationNum
-    console.log('============当前userInfo ===================')
-    console.log(userInfo)
+    // console.log('============当前userInfo ===================')
+    // console.log(userInfo)
 
     if (!isEmpty(captainUser)) {
         invitationCount = captainUser.invitationNum
@@ -79,8 +79,8 @@ module.exports = async (ctx) => {
     try {
         getPrizeInfo = await db.readMysql(sql)
     } catch (err) {
-        console.log('============获取礼物状态错误信息==========')
-        console.log(err)
+        // console.log('============获取礼物状态错误信息==========')
+        // console.log(err)
         ctx.body = outJson(ctx, 50001, err)
         return
     }

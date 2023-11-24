@@ -27,8 +27,6 @@ module.exports = async (ctx) => {
 
     try {
         resp = await http.post(HTTPURL.tokenUrl, postData, { headers })
-        // console.log('resp=========callback回调==============')
-        // console.log(resp)
         let token = resp.access_token
         ctx.session.riotAccessToken = token
         ctx.session.maxAge = resp.expires_in * 1000

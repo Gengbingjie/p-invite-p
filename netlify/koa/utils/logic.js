@@ -42,8 +42,8 @@ const logic = {
                 invitationNum: invitationNum,
                 createTime: new Date().toISOString()
             }
-            console.log('===========插入数据库result============result')
-            console.log(data)
+            // console.log('===========插入数据库result============result')
+            // console.log(data)
             return data
         } catch (err) {
             // console.log('err=================')

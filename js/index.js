@@ -384,6 +384,8 @@ $.ajax({
 			return false
 		}
 
+		$('.btn_login').removeClass('login_animation')
+		$('.right_txt').removeClass('right_animation')
 		isLogin = true
 		var jData = res.jData
 		invitationCode = jData.invitationCode
@@ -398,12 +400,26 @@ $.ajax({
 			}
 		}
 
-		$('#friends_list').html(liHtml)
-		if (invitationCount == 3) {
-			$('#collectBtn').removeClass('gray')
-		} else {
-			$('#collectBtn').addClass('gray')
+		const prizeStatus = res.jData.prizeStatus
+		for (let key in prizeStatus) {
+			let value = prizeStatus[key]
+			if (value) {
+				$('.jl_list li').eq([+key - 1]).removeClass('cur')
+				$('.jl_list li').eq([+key - 1]).addClass('get')
+			}
+			if (key === '6' && prizeStatus[key] && invitationCount < 3) {
+				$('#collectBtn').addClass('gray')
+			} else {
+				$('#collectBtn').removeClass('gray')
+			}
 		}
+
+		$('#friends_list').html(liHtml)
+		// if (invitationCount == 3) {
+		// 	$('#collectBtn').removeClass('gray')
+		// } else {
+		// 	$('#collectBtn').addClass('gray')
+		// }
 	},
 	error: function (res) {
 	},
@@ -435,13 +451,29 @@ $('#collectBtn').on('click', function () {
 
 	collectBtnClick = true
 
+	getReward(6, _this)
+
+})
+
+$('.jl_list').on('click', 'li', function () {
+	if (!isLogin) {
+		alertLogin()
+		return false
+	}
+	const pos = $(this)[0].dataset.pos
+	if ($(this).hasClass('cur')) {
+		var _this = $(this)
+		getReward(pos, _this)
+	}
+})
+// 领取奖励接口请求
+function getReward(pos, _this) {
 	$.ajax({
 		// url: url + '/invitation/collect?invitationCode=' + invitationCode,
-		url: url + '/api/collect?invitationCode=' + invitationCode,
+		url: url + '/api/collect?prizePosition=' + pos,
 		type: 'GET',
 		dataType: 'json',
 		success: function (res) {
-			collectBtnClick = false
 			if (res.iRet != 0) {
 				if (res.iRet == 40001) {
 					alertLogin()
@@ -450,8 +482,14 @@ $('#collectBtn').on('click', function () {
 				showAlert(res.iRet)
 				return false
 			}
+			if (pos === 6) {
+				collectBtnClick = false
+				_this.addClass('gray')
+			} else {
+				_this.removeClass('cur')
+				_this.addClass('get')
+			}
 			TGDialogS('pop_ts1')
-			_this.addClass('gray')
 		},
 		error: function (res) {
 			collectBtnClick = false
@@ -460,7 +498,7 @@ $('#collectBtn').on('click', function () {
 			collectBtnClick = false
 		}
 	});
-})
+}
 
 function showAlert(iRet) {
 	var text = getSMsgByiRet(iRet)

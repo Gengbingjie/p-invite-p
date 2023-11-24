@@ -12,6 +12,7 @@ const setInvitationCode = require('./middleware/setInvitationCode')
 const app = new Koa();
 const router = new Router();
 const db = require('./lib/mysql')
+
 // 使用路由中间件
 //校验登录态
 app.use(time)

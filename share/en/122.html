@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
       
     <!-- twitter分享 -->
-    <meta property="twitter:url" content="https://riot.7jing.com/share/en/122.html"/>
+    <meta property="twitter:url" content="/share/en/122.html"/>
     <meta name="twitter:title" content="Team Up With Me to Pre-Register 《Teamfight Tactics Mobile》, Exclusive Reward Awaits!"/>
     <meta name="twitter:description" content=""/>
-    <meta name="twitter:site" content="https://riot.7jing.com/share/en/122.html">
+    <meta name="twitter:site" content="/share/en/122.html">
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="https://riot.7jing.com/images/share/en/122.jpg"/>
+    <meta name="twitter:image" content="/images/share/en/122.jpg"/>
     
     <!-- facebook分享 -->
-    <meta property="og:url" content="https://riot.7jing.com/share/en/122.html"/>
+    <meta property="og:url" content="/share/en/122.html"/>
     <meta property="og:title" content="Team Up With Me to Pre-Register 《Teamfight Tactics Mobile》, Exclusive Reward Awaits!"/>
     <meta property="og:description" content=""/>
-    <meta property="og:image" content="https://riot.7jing.com/images/share/en/122.jpg"/>
+    <meta property="og:image" content="/images/share/en/122.jpg"/>
     <meta property="og:type" content="website"/>
   
     <title>share</title>
@@ -40,5 +40,31 @@
         return ""
       }
     }
-    window.location.href = "https://riot.7jing.com?invitationCode=" + getQueryString("invitationCode")
+
+    let metaArr = [
+        {
+            name: `property="twitter:url"`,
+            url: `${window.location.origin}/share/en/122.html`
+        }, {
+            name: `name="twitter:site"`,
+            url: `${window.location.origin}/share/en/122.html`
+        }, {
+            name: `name="twitter:image"`,
+            url: `${window.location.origin}/images/share/en/122.jpg`
+        }, {
+            name: `property="og:url"`,
+            url: `${window.location.origin}/share/en/122.html`
+        }, {
+            name: `property="og:image"`,
+            url: `${window.location.origin}/images/share/en/122.jpg`
+        }
+    ]
+    metaArr.forEach(item => {
+        setMetaContent(item.name, item.url)
+    })
+    function setMetaContent(name, content) {
+        let metaTag = document.querySelector(`meta[${name}]`)
+        metaTag.setAttribute("content", content);
+    }
+    window.location.href = `${window.location.origin}?invitationCode=` + getQueryString("invitationCode")
 </script>
