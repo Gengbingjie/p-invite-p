@@ -25,8 +25,6 @@ class DB {
     async readMysql(sql) {
         return new Promise((resolve, reject) => {
             this.connection.query(sql, (error, results) => {
-                console.log(results)
-                console.log(process.env)
                 if (error) return reject(error);
                 resolve(results);
             });

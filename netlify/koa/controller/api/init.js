@@ -4,6 +4,11 @@ const { SKUID_DATA } = require('../../config/Constant')
 const db = require('../../lib/mysql')
 
 module.exports = async (ctx) => {
+    db.init().then(() => {
+        console.log('数据库连接成功')
+    }).catch(err => {
+        console.log('数据库连接失败')
+    })
     const userOpenId = ctx.state.userOpenId
     let invitationCode = ctx.session.invitationCode
     if (!invitationCode) {
