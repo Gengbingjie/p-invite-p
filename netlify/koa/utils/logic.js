@@ -12,6 +12,8 @@ const logic = {
         }
     },
     async getUserInfoByUserOpenId(userOpenId) {
+        console.log('userOpenId')
+        console.log(userOpenId)
         let sql = `SELECT * FROM preRegisterUser WHERE userOpenId = '${userOpenId}' LIMIT 1`;
         let userInfo
         try {
