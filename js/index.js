@@ -362,6 +362,22 @@ function shareMetaUrl() {
 	return `https://riot.7jing.com/share/` + resultLang + `/` + resultNum2 + `.html?invitationCode=` + invitationCode
 }
 
+//netlify平台登录回调默认带了code参数
+(function () {
+	const urlParams = new URL(window.location.href).searchParams;
+	let setUrlFlag = false
+	urlParams.forEach((value, key) => {
+		if (key === 'code' || key === 'session_state' || key === 'iss') {
+			if (!setUrlFlag) setUrlFlag = true
+			urlParams.delete(key)
+		}
+	});
+	if (setUrlFlag) {
+		const newURL = window.location.origin + window.location.pathname + (urlParams.size ? '?' : '') + urlParams;
+		window.location.href = newURL;
+		setUrlFlag = false
+	}
+})()
 // var url = 'https://riot.7jing.com/php'
 var url = `${thisUrl.origin}`
 var invitationCode = $.trim(getQueryString('invitationCode'))
@@ -432,6 +448,12 @@ $.ajax({
 var callbackUrl = `${thisUrl.origin}/api/callback`
 var loginUrl = 'https://auth.riotgames.com/authorize?redirect_uri=' + callbackUrl + '&client_id=e74006e7-ba31-4446-b0f2-3a29c66919cd&response_type=code&scope=openid';
 console.log(callbackUrl)
+$('.btn_login').on('click', function () {
+	if (!isLogin) {
+		alertLogin()
+		return false
+	}
+})
 
 var collectBtnClick = false
 $('#collectBtn').on('click', function () {
