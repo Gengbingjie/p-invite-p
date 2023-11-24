@@ -26,7 +26,7 @@ module.exports = async (ctx) => {
         userInfo = userInfo[0]
     }
     //查询是否满足领取条件
-    if (userInfo.invitationNum !== 3 && pos === 7) {
+    if (userInfo.invitationNum !== 3 && prizePosition === 6) {
         return ctx.body = outJson(ctx, 20003);
     }
 
