@@ -359,7 +359,7 @@ $('#twitterShare').on('click', function () {
 })
 
 function shareMetaUrl() {
-	return `https://riot.7jing.com/share/` + resultLang + `/` + resultNum2 + `.html?invitationCode=` + invitationCode
+	return `${thisUrl.origin}/share/` + resultLang + `/` + resultNum2 + `.html?invitationCode=` + invitationCode
 }
 
 //netlify平台登录回调默认带了code参数
