@@ -365,17 +365,15 @@ function shareMetaUrl() {
 //netlify平台登录回调默认带了code参数
 (function () {
 	const urlParams = new URL(window.location.href).searchParams;
-	let setUrlFlag = false
-	urlParams.forEach((value, key) => {
-		if (key === 'code' || key === 'session_state' || key === 'iss') {
-			if (!setUrlFlag) setUrlFlag = true
-			urlParams.delete(key)
-		}
-	});
-	if (setUrlFlag) {
-		const newURL = window.location.origin + window.location.pathname + (urlParams.size ? '?' : '') + urlParams;
+	let newUrlParams = ''
+	if (urlParams.has('code') && urlParams.has('iss') && urlParams.has('session_state')) {
+		urlParams.forEach((value, key) => {
+			if (key !== 'code' && key !== 'session_state' && key !== 'iss') {
+				newUrlParams += `&${key}=${value}`
+			}
+		});
+		const newURL = window.location.origin + window.location.pathname + (newUrlParams.length ? '?' : '') + newUrlParams.slice(1);
 		window.location.href = newURL;
-		setUrlFlag = false
 	}
 })()
 // var url = 'https://riot.7jing.com/php'
