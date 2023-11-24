@@ -359,7 +359,7 @@ $('#twitterShare').on('click', function () {
 })
 
 function shareMetaUrl() {
-	return `${thisUrl.origin}/share/` + resultLang + `/` + resultNum2 + `.html?invitationCode=` + invitationCode
+	return `https://riot.7jing.com/share/` + resultLang + `/` + resultNum2 + `.html?invitationCode=` + invitationCode
 }
 
 // var url = 'https://riot.7jing.com/php'

@@ -390,7 +390,7 @@ html {
 
 .right_box {
 	width: 0.78rem;
-	height: 3.8rem;
+	height: 3.3rem;
 	position: absolute;
 	right: 1vw;
 	top: 50%;
@@ -414,50 +414,71 @@ html {
 	width: 2.85rem;
 	height: 1.48rem;
 	position: absolute;
-	right: 0;
+	right: .8rem;
 	bottom: 0;
-	padding: 0.62rem 0.88rem 0.19rem 0.25rem;
+	padding: 0.55rem 0.8rem 0.25rem 0.12rem;
 	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 0.18rem;
+	font-size: 0.16rem;
 	color: #fff;
 	/* text-align: center; */
 	line-height: .22rem;
+	text-shadow: #62a1ff 0 0 3px,#62a1ff 0 0 3px,#62a1ff 0 0 3px,#62a1ff 0 0 3px;
+	pointer-events: none;
 }
 
 .right_txt {
-	-webkit-animation: tada 1.7s ease both infinite;
-	transform-origin: right center;
+	-webkit-animation:rightt 1.2s ease-in-out both infinite;
+}
+@-webkit-keyframes rightt{
+0%{-webkit-transform:translateX(-.2rem);filter: brightness(1);}
+50%{-webkit-transform:translateX(0);filter: brightness(1.1);}
+100%{-webkit-transform:translateX(-.2rem);filter: brightness(1);}
+}
+.btn_login {
+	-webkit-animation:logins 1.2s ease-in-out both infinite;
+}
+@-webkit-keyframes logins{
+0%{-webkit-transform: scale(1);filter: brightness(1);}
+50%{-webkit-transform: scale(1.1);filter: brightness(1.3);}
+100%{-webkit-transform: scale(1);filter: brightness(1);}
 }
 
-@-webkit-keyframes tada {
-	0% {
-		-webkit-transform: scale(1)
-	}
-
-	10%,
-	20% {
-		-webkit-transform: scale(0.95) rotate(-2deg)
-	}
-
-	30%,
-	50%,
-	70%,
-	90% {
-		-webkit-transform: scale(1.05) rotate(2deg)
-	}
-
-	40%,
-	60%,
-	80% {
-		-webkit-transform: scale(1.05) rotate(-2deg)
-	}
-
-	100% {
-		-webkit-transform: scale(1) rotate(0)
-	}
+.xz_tips{
+	background: url(../images/tips.png) no-repeat;
+	width: 7rem;
+	height: .6rem;
+	background-size: 100% 100%;
+	position: absolute;
+	left: 50%;
+	margin-left: -3.5rem;
+	top: -1.8rem;
+	text-align: center;
+	line-height: .54rem;
+	color: #fff;
+	font-size: .24rem;
+	font-family: 'font1';
+	text-shadow: #3c67a4 .02rem .02rem .05rem;
+}
+.lang_th .xz_tips{
+	font-size: .18rem;
+}
+.lang_id .xz_tips{
+	font-size: .2rem;
+}
+.active .xz_tips,.active .xz_time{
+	-webkit-animation: fadeInDown 1s .5s ease both;
+}
+.xz_time{
+	position: absolute;
+	right: .25rem;
+	bottom: 1.1rem;
+	font-size: .18rem;
+	color: #fff;
+	line-height: 1.3;
+	text-shadow: #62a1ff 0 0 .05rem,#62a1ff 0 0 .05rem,#62a1ff 0 0 .05rem,#62a1ff 0 0 .05rem;
 }
 
 .milestone_box {
@@ -554,28 +575,28 @@ m:  10%   30%   50%   69%  88%   100%
 /* .jl_list li:nth-of-type(1){margin-left: 0;}
 .jl_list li:nth-of-type(5){margin-right: 0;} */
 .jl_list li:nth-of-type(1) {
-	left: 6%;
+	left: 13%;
 }
 
 .jl_list li:nth-of-type(2) {
-	left: 20%;
+	left: 33%;
 }
 
 .jl_list li:nth-of-type(3) {
-	left: 35%;
+	left: 53%;
 }
 
 .jl_list li:nth-of-type(4) {
-	left: 51%;
+	left: 73%;
 }
 
 .jl_list li:nth-of-type(5) {
-	left: 68%;
+	left: 93%;
 }
 
-.jl_list li:nth-of-type(6) {
+/* .jl_list li:nth-of-type(6) {
 	left: 85%;
-}
+} */
 
 .btn_lq{
 	background: url(../images/btn_lq.png) no-repeat;
@@ -628,9 +649,39 @@ m:  10%   30%   50%   69%  88%   100%
 	transform: scale(.8);
 }
 
-.cur .jl_bg {
+.cur .jl_bg,.get .jl_bg {
 	background: url(../images/jl_cur.png) no-repeat 50% 50%;
 	background-size: 80%;
+}
+.cur img{
+	-webkit-animation: tada2 1.7s ease both infinite;
+}
+@-webkit-keyframes tada2 {
+	0% {
+		-webkit-transform: scale(1)
+	}
+
+	10%,
+	20% {
+		-webkit-transform: scale(0.95) rotate(-5deg)
+	}
+
+	30%,
+	50%,
+	70%,
+	90% {
+		-webkit-transform: scale(1.05) rotate(5deg)
+	}
+
+	40%,
+	60%,
+	80% {
+		-webkit-transform: scale(1.05) rotate(-5deg)
+	}
+
+	100% {
+		-webkit-transform: scale(1) rotate(0)
+	}
 }
 
 .jl_txt {
@@ -1187,9 +1238,9 @@ input:-moz-placeholder {
 }
 
 
-.right_box a:nth-of-type(4) {
+/* .right_box a:nth-of-type(4) {
 	display: none;
-}
+} */
 
 .lang_vi .down_btn {
 	display: none;
@@ -1302,6 +1353,7 @@ input:-moz-placeholder {
 
 .lang_id .right_box .right_txt {
 	font-size: .14rem;
+	line-height: .16rem;
 }
 
 .lang_vi,
@@ -1453,10 +1505,24 @@ input:-moz-placeholder {
 	background-size: 100% 100%;
 }
 
-.cur .jl_bg::after {
+
+.cur .jl_bg::after,.get .jl_bg::after {
 	background: url(../images/jd_dot2.png) no-repeat;
 	opacity: 1;
 	background-size: 100% 100%;
+}
+
+.get .jl_bg::before{
+	content: "";
+	position: absolute;
+	width: .75rem;
+	height: .86rem;
+	background: url(../images/get.png) no-repeat;
+	background-size: 100% 100%;
+	left: 50%;
+	margin-left: -.37rem;
+	top: .21rem;
+	z-index: 9;
 }
 
 /* 2期 */

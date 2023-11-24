@@ -5,9 +5,9 @@ var GLanguage = {
     "lang_0":"Teamfight Tactics",
     "lang_1":"Teamfight Tactics APAC coming to Mobile!",
     "lang_2":"PLAY NOW",
-    "lang_3":"Follow us on social media for updates!",
+    "lang_3":"Log in to your account now to claim your exciting rewards!",
     "lang_4":"Star Shards<br>×50", //rewards1
-    "lang_5":"Treasure Tokens<br>×50", //rewards2
+    "lang_5":"Treasure Tokens<br>×120", //rewards2
     "lang_6":'"Little Legends Together"<br> Icon', //rewards3
     "lang_7":"Treasure Tokens<br>×50", //rewards4
     "lang_8":"Boba Sprite", //rewards5
@@ -66,15 +66,18 @@ var GLanguage = {
 	
 	"lang_49":"Link Copied",
 	
-	"lang_50":"Claim"
+	"lang_50":"Claim",
+	
+	"lang_51":"We've hit 5,000,000 pre-registrations! Exclusive Reward Awaits!",
+	"lang_52":"28/11/2023-07/01/2024 UTC+8",
   },
   "ENMY": {
     "lang_0":"Teamfight Tactics",
     "lang_1":"Teamfight Tactics APAC coming to Mobile!",
     "lang_2":"PLAY NOW",
-    "lang_3":"Follow our official social media now",
+    "lang_3":"Log in to your account now to claim your exciting rewards!",
     "lang_4":"Star Shards<br>×50", //rewards1
-    "lang_5":"Treasure Tokens<br>×50", //rewards2
+    "lang_5":"Treasure Tokens<br>×120", //rewards2
     "lang_6":'"Little Legends Together"<br> Icon', //rewards3
     "lang_7":"Treasure Tokens<br>×50", //rewards4
     "lang_8":"Boba Sprite", //rewards5
@@ -133,15 +136,18 @@ var GLanguage = {
 	
 	"lang_49":"Link Copied",
 	
-	"lang_50":"Claim"
+	"lang_50":"Claim",
+	
+	"lang_51":"We've hit 5,000,000 pre-registrations! Exclusive Reward Awaits!",
+	"lang_52":"28/11/2023-07/01/2024 UTC+8",
   },
   "TW": {
     "lang_0":"《聯盟戰棋》",
     "lang_1":"聯盟戰棋即將於亞太地區登上手機平台",
     "lang_2":"立即開玩",
-    "lang_3":"追蹤我們即可獲得獨家消息和各項福利！",
+    "lang_3":"登入帳號即可領取獎勵！",
     "lang_4":"星之碎片<br>×50", //rewards1
-    "lang_5":"寶藏幣<br>×50", //rewards2
+    "lang_5":"寶藏幣<br>×120", //rewards2
     "lang_6":"「聯盟精靈團結一致」<br>限定頭像", //rewards3
     "lang_7":"寶藏幣<br>×50", //rewards4
     "lang_8":"波霸奶茶<br>河川仙子", //rewards5
@@ -200,15 +206,18 @@ var GLanguage = {
 	
 	"lang_49":"已複製連結",
 	
-	"lang_50":"領取"
+	"lang_50":"領取",
+	
+	"lang_51":"預先註冊玩家已突破 5,000,000 人！獨家好禮等你來拿！",
+	"lang_52":"台灣時間2023年11月28日至2024年01月07日",
   },
   "TH": {
     "lang_0":"Teamfight Tactics",
     "lang_1":"Teamfight Tactics APAC กำลังจะมาในโทรศัพท์มือถือ!",
     "lang_2":"เล่นเลยตอนนี้",
-    "lang_3":"ติดตามเราบนโซเชียลมีเดียได้แล้ว",
+    "lang_3":"ล็อกอินบัญชีของคุณตอนนี้เพื่อรับรางวัลสุดพิเศษได้เลย!”",
     "lang_4":"Star Shards<br>×50", //rewards1
-    "lang_5":"Treasure Tokens<br>×50", //rewards2
+    "lang_5":"Treasure Tokens<br>×120", //rewards2
     "lang_6":'"Little Legends Together"<br> Icon', //rewards3
     "lang_7":"Treasure Tokens<br>×50", //rewards4
     "lang_8":"Boba Sprite", //rewards5
@@ -267,15 +276,18 @@ var GLanguage = {
 	
 	"lang_49":"คัดลอกลิงก์",
 	
-	"lang_50":"รับรางวัล"
+	"lang_50":"รับรางวัล",
+	
+	"lang_51":"มีผู้เล่นลงทะเบียนล่วงหน้า 5,000,000 คนแล้ว! รางวัลสุดพิเศษกำลังรอคุณอยู่!",
+	"lang_52":"28/11/2023-07/01/2024 UTC+8",
   },
   "ID": {
     "lang_0":"Teamfight Tactics",
     "lang_1":"Teamfight Tactics APAC hadir di Mobile!",
     "lang_2":"MAIN SEKARANG",
-    "lang_3":"Ikuti sosial media TFT untuk info dan keuntungan eksklusif!",
+    "lang_3":"Log in ke akunmu sekarang untuk mengeklaim hadiah menarik!",
     "lang_4":"Shards Star<br>×50", //rewards1
-    "lang_5":"Treasure Tokens<br>×50", //rewards2
+    "lang_5":"Treasure Tokens<br>×120", //rewards2
     "lang_6":'"Little Legends Together"<br> Icon', //rewards3
     "lang_7":"Treasure Tokens<br>×50", //rewards4
     "lang_8":"Boba Sprite", //rewards5
@@ -334,7 +346,10 @@ var GLanguage = {
 	
 	"lang_49":"Tautan Disalin",
 	
-	"lang_50":"Klaim"
+	"lang_50":"Klaim",
+	
+	"lang_51":"Udah ada 5,000,000 player yang pre-register nih! Hadiah Eksklusif Menanti!",
+	"lang_52":"28/11/2023-07/01/2024 WIB",
   },
  //  "VI": {
  //    "lang_0":"Đấu Trường Chân Lý",
