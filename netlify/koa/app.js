@@ -11,7 +11,6 @@ const setInvitationCode = require('./middleware/setInvitationCode')
 
 const app = new Koa();
 const router = new Router();
-const db = require('./lib/mysql')
 
 
 // 使用路由中间件

@@ -19,7 +19,7 @@ const SKUID_DATA = {
 
 const SQLCONFIG = {
   host: process.env.NETLIFY_DATA_URL,
-  user: process.env.NETLIFY_DATA_USER,
+  user: process.env.NETLIFY_DATA_USERNAME,
   password: process.env.NETLIFY_DATA_PWD,
   charset: 'utf8',
   port: process.env.NETLIFY_DATA_PORT,
