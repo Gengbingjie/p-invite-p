@@ -373,7 +373,7 @@ function shareMetaUrl() {
 			}
 		});
 		const newURL = window.location.origin + window.location.pathname + (newUrlParams.length ? '?' : '') + newUrlParams.slice(1);
-		window.location.href = newURL;
+		window.history.pushState({}, "", newURL);
 	}
 })()
 // var url = 'https://riot.7jing.com/php'
@@ -414,6 +414,12 @@ $.ajax({
 			}
 		}
 
+		$('#friends_list').html(liHtml)
+		if (invitationCount == 3) {
+			$('#collectBtn').removeClass('gray')
+		} else {
+			$('#collectBtn').addClass('gray')
+		}
 		const prizeStatus = res.jData.prizeStatus
 		for (let key in prizeStatus) {
 			let value = prizeStatus[key]
@@ -421,19 +427,10 @@ $.ajax({
 				$('.jl_list li').eq([+key - 1]).removeClass('cur')
 				$('.jl_list li').eq([+key - 1]).addClass('get')
 			}
-			if (key === '6' && prizeStatus[key] && invitationCount < 3) {
+			if (key === '6' && prizeStatus[key]) {
 				$('#collectBtn').addClass('gray')
-			} else {
-				$('#collectBtn').removeClass('gray')
 			}
 		}
-
-		$('#friends_list').html(liHtml)
-		// if (invitationCount == 3) {
-		// 	$('#collectBtn').removeClass('gray')
-		// } else {
-		// 	$('#collectBtn').addClass('gray')
-		// }
 	},
 	error: function (res) {
 	},

@@ -1,12 +1,12 @@
-const SQLCONFIG = {
-  host: '119.45.189.71',
-  user: 'qinzhiyuan',
-  password: '8j8my8XEy5MpAcwT',
-  // password: '8j8my8XEy5M',
-  charset: 'utf8',
-  port: '3306',
-  database: '秦志远测试数据库'
-}
+// const SQLCONFIG = {
+//   host: '119.45.189.71',
+//   user: 'qinzhiyuan',
+//   password: '8j8my8XEy5MpAcwT',
+//   // password: '8j8my8XEy5M',
+//   charset: 'utf8',
+//   port: '3306',
+//   database: '秦志远测试数据库'
+// }
 
 const SKUID_DATA = {
   '1': 'APAC_EVENT_STAR_SHARD_SKU_1',
@@ -17,14 +17,14 @@ const SKUID_DATA = {
   '6': '2023_TFT_APAC_YAY_EMOTE'
 }
 
-// const SQLCONFIG = {
-//   host: process.env.NETLIFY_DATA_URL,
-//   user: process.env.NETLIFY_DATA_USER,
-//   password: process.env.NETLIFY_DATA_PWD,
-//   charset: 'utf8',
-//   port: process.env.NETLIFY_DATA_PORT,
-//   database: process.env.NETLIFY_DATA_DATABASE
-// }
+const SQLCONFIG = {
+  host: process.env.NETLIFY_DATA_URL,
+  user: process.env.NETLIFY_DATA_USER,
+  password: process.env.NETLIFY_DATA_PWD,
+  charset: 'utf8',
+  port: process.env.NETLIFY_DATA_PORT,
+  database: process.env.NETLIFY_DATA_DATABASE
+}
 
 const HTTPURL = {
   authUser: 'https://auth.riotgames.com/userinfo',

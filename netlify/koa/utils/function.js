@@ -15,8 +15,8 @@ module.exports = {
             }
         }).catch((err) => {
             console.log('token无效!')
-            console.log(err)
-            return ''
+            // console.log(err.AxiosError)
+            return ""
         })
 
         if (checkResult) {

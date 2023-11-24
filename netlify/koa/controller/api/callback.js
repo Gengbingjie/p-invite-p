@@ -1,6 +1,7 @@
 const { DATA_KEY } = require('../../config/Constant')
 const http = require('../../utils/axios')
-const { HTTPURL } = require('../../config/Constant')
+const { HTTPURL } = require('../../config/Constant');
+const { outJson } = require('../../utils/utils');
 
 module.exports = async (ctx) => {
     const { code } = ctx.query;
@@ -37,7 +38,8 @@ module.exports = async (ctx) => {
 
     } catch (err) {
         console.log(err)
-        ctx.body = { message: 'code验证失败', err: JSON.stringify(err) }
+        // ctx.body = { message: 'code验证失败', err: JSON.stringify(err) }
+        ctx.body = outJson(ctx, 50001)
         // ctx.redirect('/')
     }
 }
